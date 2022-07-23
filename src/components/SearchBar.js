@@ -10,16 +10,16 @@ class SearchBar extends React.Component {
     this.setState({ term: e.target.value });
   };
 
-  onFormSubmit = (e) => {
+  submitForm = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state.term);
-    //  TODO : Make sure we call
-    // callback from parent compoennt
+    this.props.onFormSubmit(this.state.term);
+    //  note that that onFormSubmit is a prop originally specified
+    //  within the parent component and we're passing our state.term to that same function.
   };
 
   render() {
     return (
-      <div onSubmit={this.onFormSubmit} className="search-bar ui segment">
+      <div onSubmit={this.submitForm} className="search-bar ui segment">
         <form className="ui form">
           <div className="field">
             <label>Video Search</label>
