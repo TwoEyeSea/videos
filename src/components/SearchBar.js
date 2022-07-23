@@ -6,13 +6,15 @@ class SearchBar extends React.Component {
     placeholder: " Please enter a search term :)",
   };
 
+  onInputChange = (e) => {
+    this.setState({ term: e.target.value });
+  };
+
   onFormSubmit = (e) => {
     e.preventDefault();
     this.props.onSubmit(this.state.term);
-  };
-
-  onInputChange = (e) => {
-    this.setState({ term: e.target.value });
+    //  TODO : Make sure we call
+    // callback from parent compoennt
   };
 
   render() {
