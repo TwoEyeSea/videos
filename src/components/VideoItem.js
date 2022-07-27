@@ -3,7 +3,7 @@ import "./VideoItem.css";
 
 const VideoItem = ({ video, onVideoSelect }) => {
   return (
-    <div onClick={() => onVideoSelect(video)} className="video-item item">
+    <div key={video.id.videoId} onClick={() => onVideoSelect(video)} className="video-item item">
       <img className="ui image" src={video.snippet.thumbnails.medium.url} />
       {/* We can also get video Thumbnails from the Youtube API */}
       <div className="content">
