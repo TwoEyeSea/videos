@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import YouTube from "../APIs/YouTube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import DisplayToggle from "./DisplayToggle";
 
 import "./DisplayLayout.css";
 class App extends React.Component {
@@ -29,7 +30,7 @@ class App extends React.Component {
     return (
       <div className="ui container">
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        {/* <DisplayToggle /> */}
+        <DisplayToggle />
         <div className="grid-display">
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
