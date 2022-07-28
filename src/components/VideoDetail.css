@@ -1,0 +1,7 @@
+.video-detail{
+    grid-column: 1;
+    grid-row: 1;
+    grid-column-end: span 5
+    ;
+
+}

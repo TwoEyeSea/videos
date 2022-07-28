@@ -1,0 +1,11 @@
+.container{
+    width: 80vw !important;
+    height: 800px;
+}
+.grid-display {
+    display: grid;
+    grid-gap: 0px 10px;
+grid-template-columns: repeat(7, 1fr );
+  
+    /* height: 800px; */
+}

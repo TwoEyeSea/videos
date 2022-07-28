@@ -1,7 +1,8 @@
 .video-list {
-
+    margin-top: 0 !important;
     overflow-y: scroll;
-    height: 100vh;
-
-
+    height: 800px;
+    grid-column:6;
+    grid-row:1;
+    grid-column-end: span 2;
 }
