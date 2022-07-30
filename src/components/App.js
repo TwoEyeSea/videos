@@ -10,6 +10,7 @@ class App extends React.Component {
   state = {
     videos: [],
     selectedVideo: null,
+    gridDisplay: "grid-display",
   };
 
   onTermSubmit = async (term) => {
@@ -26,12 +27,23 @@ class App extends React.Component {
     this.setState({ selectedVideo: video });
     console.log("This is the app", video);
   };
+
+  videoListBelow = () => {
+    console.log("ping videoListBelow");
+    this.setState({ gridDisplay: " " });
+  };
+
+  videoListOnRight = () => {
+    console.log("ping videoListOnRight");
+    this.setState({ gridDisplay: "grid-display" });
+  };
+
   render() {
     return (
       <div className="ui container">
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <DisplayToggle />
-        <div className="grid-display">
+        <DisplayToggle videoListBelow={this.videoListBelow} videoListOnRight={this.videoListOnRight} />
+        <div className={this.state.gridDisplay}>
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
         </div>

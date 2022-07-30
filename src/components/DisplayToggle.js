@@ -1,14 +1,13 @@
 import React from "react";
 
-const gridDisplay = document.querySelector(".grid-display");
-const DisplayToggle = ({ gridOn, gridOff }) => {
+const DisplayToggle = ({ videoListOnRight, videoListBelow }) => {
   return (
     <div className="ui large buttons">
-      <button onClick={() => gridOff()} className="ui button">
+      <button onClick={() => videoListBelow()} className="ui button">
         Video List Below
       </button>
       <div className="or"></div>
-      <button onClick={() => gridOn()} className="ui button">
+      <button onClick={() => videoListOnRight()} className="ui button">
         Video List on Right
       </button>
     </div>
