@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplayToggle = ({ videoListOnRight, videoListBelow }) => {
+const DisplayToggleButtons = ({ videoListOnRight, videoListBelow }) => {
   return (
     <div className="ui large buttons">
       <button onClick={() => videoListBelow()} className="ui button">
@@ -14,4 +14,4 @@ const DisplayToggle = ({ videoListOnRight, videoListBelow }) => {
   );
 };
 
-export default DisplayToggle;
+export default DisplayToggleButtons;

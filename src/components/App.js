@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import YouTube from "../APIs/YouTube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
-import DisplayToggle from "./DisplayToggle";
+import DisplayToggleButtons from "./DisplayToggle";
 
 import "./DisplayLayout.css";
 class App extends React.Component {
@@ -29,12 +29,10 @@ class App extends React.Component {
   };
 
   videoListBelow = () => {
-    console.log("ping videoListBelow");
     this.setState({ gridDisplay: " " });
   };
 
   videoListOnRight = () => {
-    console.log("ping videoListOnRight");
     this.setState({ gridDisplay: "grid-display" });
   };
 
@@ -42,7 +40,7 @@ class App extends React.Component {
     return (
       <div className="ui container">
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <DisplayToggle videoListBelow={this.videoListBelow} videoListOnRight={this.videoListOnRight} />
+        <DisplayToggleButtons videoListBelow={this.videoListBelow} videoListOnRight={this.videoListOnRight} />
         <div className={this.state.gridDisplay}>
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
