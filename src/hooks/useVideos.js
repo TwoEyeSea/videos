@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 
 import YouTube from "../APIs/YouTube";
 
-const useVideos = () => {
+const useVideos = (term) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    search();
+    search(term);
   }, []);
 
-  const search = async () => {
+  const search = async (term) => {
     const response = await YouTube.get("/search", {
       params: {
-        q: "kurzgesagt",
+        q: term,
       },
     });
 
